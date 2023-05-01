@@ -14,6 +14,7 @@ import OrderReceipt from "./components/OrderReceipt";
 import Cart from "./components/Cart";
 import { CartProvider } from "./components/CartContext";
 import Payment from "./components/Payment";
+import FakeAdmin from "./components/FakeAdmin";
 
 Amplify.configure(awsExports);
 
@@ -35,6 +36,7 @@ function App({ signOut, user }) {
               <Route path="/receipt/:id" element={<OrderReceipt />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/payment" element={<Payment />} />
+              <Route path="/fake-admin" element={<FakeAdmin />} />;
               {/* <Route path="/test-payment" element={<Payment />} /> */}
             </Routes>
           </Router>

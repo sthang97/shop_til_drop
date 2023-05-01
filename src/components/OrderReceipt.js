@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams, useLocation, useNavigate } from "react-router-dom";
 import "./OrderReceipt.css";
 
 const OrderReceipt = () => {
@@ -7,12 +7,18 @@ const OrderReceipt = () => {
   const { state } = useLocation();
   const { order, productName } = state || {};
 
+  const navigate = useNavigate();
+
   if (!order) {
     return <p>Order not found</p>;
   }
 
   const { purchase_units } = order;
   const { amount } = purchase_units[0];
+
+  const handleClick = () => {
+    navigate("/");
+  };
 
   return (
     <div className="order-receipt">
@@ -35,6 +41,7 @@ const OrderReceipt = () => {
         </tbody>
       </table>
       <p className="order-total">Total: ${amount.value}</p>
+      <button onClick={handleClick}>Continue Shopping</button>
     </div>
   );
 };

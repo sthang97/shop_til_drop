@@ -20,31 +20,43 @@ const Payment = () => {
     }
   };
 
+  const handleBackToHomepage = () => {
+    navigate("/");
+  };
+
+  const handleBackToCart = () => {
+    navigate("/cart");
+  };
+
   return (
-    <PayPalScriptProvider
-      options={{
-        "client-id":
-          "Abg7pzK9aTcJLCBjuFMWwbCSaGxWVjVr4Xjdc7ci-BF4zGbhWI7NN5Y36zpZZzYXaPa7B0ZxBoaI6ClY",
-        currency: "USD",
-      }}
-    >
-      <PayPalButtons
-        createOrder={(data, actions) => {
-          return actions.order.create({
-            purchase_units: [
-              {
-                custom_id: "default",
-                description: productName,
-                amount: {
-                  value: price,
-                },
-              },
-            ],
-          });
+    <div>
+      <button onClick={handleBackToHomepage}>Back to Homepage</button>
+      <button onClick={handleBackToCart}>Back to Cart</button>
+      <PayPalScriptProvider
+        options={{
+          "client-id":
+            "Abg7pzK9aTcJLCBjuFMWwbCSaGxWVjVr4Xjdc7ci-BF4zGbhWI7NN5Y36zpZZzYXaPa7B0ZxBoaI6ClY",
+          currency: "USD",
         }}
-        onApprove={onApprove}
-      />
-    </PayPalScriptProvider>
+      >
+        <PayPalButtons
+          createOrder={(data, actions) => {
+            return actions.order.create({
+              purchase_units: [
+                {
+                  custom_id: "default",
+                  description: productName,
+                  amount: {
+                    value: price,
+                  },
+                },
+              ],
+            });
+          }}
+          onApprove={onApprove}
+        />
+      </PayPalScriptProvider>
+    </div>
   );
 };
 

@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "./CartContext";
 import "./Home.css";
 
@@ -37,7 +37,8 @@ const products = [
 
 const Home = () => {
   const [search, setSearch] = useState("");
-  const { addToCart, cartItems } = useContext(CartContext);
+  const { addToCart, cartItems, emptyCart } = useContext(CartContext);
+  const navigate = useNavigate();
 
   const getTotalCartItems = () => {
     return cartItems.reduce((total, item) => total + item.quantity, 0);
@@ -50,6 +51,11 @@ const Home = () => {
   const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(search.toLowerCase())
   );
+
+  const handleContinueShopping = () => {
+    emptyCart();
+    navigate("/");
+  };
 
   return (
     <div className="home">
@@ -84,6 +90,11 @@ const Home = () => {
           </div>
         ))}
       </div>
+      {cartItems.length > 0 && (
+        <button onClick={handleContinueShopping} className="continue-shopping">
+          Continue Shopping
+        </button>
+      )}
     </div>
   );
 };

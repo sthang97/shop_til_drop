@@ -16,6 +16,10 @@
         "securewebsite92da28fa": {
           "deploymentBucketName": "amplify-securewebsite-dev-174449-deployment",
           "s3Key": "amplify-builds/securewebsite92da28fa-536d6b6d42736675546a-build.zip"
+        },
+        "unauthorizedAccessLogger": {
+          "deploymentBucketName": "amplify-securewebsite-dev-174449-deployment",
+          "s3Key": "amplify-builds/unauthorizedAccessLogger-71532f4a485849393679-build.zip"
         }
       },
       "auth": {

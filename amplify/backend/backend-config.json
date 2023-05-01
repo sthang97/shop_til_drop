@@ -49,6 +49,11 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "unauthorizedAccessLogger": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "parameters": {
@@ -65,6 +70,22 @@
         {
           "category": "function",
           "resourceName": "securewebsite92da28fa"
+        }
+      ]
+    },
+    "AMPLIFY_function_unauthorizedAccessLogger_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "unauthorizedAccessLogger"
+        }
+      ]
+    },
+    "AMPLIFY_function_unauthorizedAccessLogger_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "unauthorizedAccessLogger"
         }
       ]
     }

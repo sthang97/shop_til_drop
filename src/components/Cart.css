@@ -46,3 +46,7 @@
 .proceed-to-payment {
   grid-column: 1 / -1; /* Spans the entire width of the summary grid */
 }
+
+.back-to-homepage {
+  margin-top: 20px;
+}
