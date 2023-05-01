@@ -1,0 +1,29 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-securewebsite-dev-174449-authRole",
+      "UnauthRoleArn": "arn:aws:iam::513967764453:role/amplify-securewebsite-dev-174449-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::513967764453:role/amplify-securewebsite-dev-174449-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-securewebsite-dev-174449-deployment",
+      "UnauthRoleName": "amplify-securewebsite-dev-174449-unauthRole",
+      "StackName": "amplify-securewebsite-dev-174449",
+      "StackId": "arn:aws:cloudformation:us-east-1:513967764453:stack/amplify-securewebsite-dev-174449/9e383880-e7a8-11ed-9f6f-0e2358b211f5",
+      "AmplifyAppId": "d2kn0tetga5qwd"
+    },
+    "categories": {
+      "function": {
+        "securewebsite92da28fa": {
+          "deploymentBucketName": "amplify-securewebsite-dev-174449-deployment",
+          "s3Key": "amplify-builds/securewebsite92da28fa-536d6b6d42736675546a-build.zip"
+        }
+      },
+      "auth": {
+        "securewebsite44737c19": {}
+      },
+      "api": {
+        "api6ef8d58e": {}
+      }
+    }
+  }
+}

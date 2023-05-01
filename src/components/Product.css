@@ -1,0 +1,24 @@
+.product-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.product-image-wrapper {
+  text-align: center;
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 767px) {
+  .product-container {
+    grid-template-columns: 1fr;
+  }
+}
